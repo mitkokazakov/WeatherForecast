@@ -2,6 +2,7 @@ import React from 'react'
 import style from '../CurrentDay/CurrentDay.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faCloud } from '@fortawesome/free-solid-svg-icons' 
+import Parameter from '../Parameter/Parameter'
 
 
 function CurrentDay() {
@@ -29,53 +30,12 @@ function CurrentDay() {
             </div>
 
             <div className={style.currentDayDetails}>
-                {/* <div class="parameter">
-                    <p class="parameter-value">18°C</p>
-
-                    <i class="fa-regular fa-sun"></i>
-
-                    <p class="parameter-name">Feels like</p>
-                </div>
-
-                <div class="parameter">
-                    <p class="parameter-value">18°C</p>
-
-                    <i class="fa-regular fa-sun"></i>
-
-                    <p class="parameter-name">Feels like</p>
-                </div>
-
-                <div class="parameter">
-                    <p class="parameter-value">18°C</p>
-
-                    <i class="fa-regular fa-sun"></i>
-
-                    <p class="parameter-name">Feels like</p>
-                </div>
-
-                <div class="parameter">
-                    <p class="parameter-value">18°C</p>
-
-                    <i class="fa-regular fa-sun"></i>
-
-                    <p class="parameter-name">Feels like</p>
-                </div>
-
-                <div class="parameter">
-                    <p class="parameter-value">18°C</p>
-
-                    <i class="fa-regular fa-sun"></i>
-
-                    <p class="parameter-name">Feels like</p>
-                </div>
-
-                <div class="parameter">
-                    <p class="parameter-value">18°C</p>
-
-                    <i class="fa-regular fa-sun"></i>
-
-                    <p class="parameter-name">Feels like</p>
-                </div> */}
+                <Parameter />
+                <Parameter />
+                <Parameter />
+                <Parameter />
+                <Parameter />
+                <Parameter />
 
             </div>
         </div>

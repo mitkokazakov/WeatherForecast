@@ -1,0 +1,28 @@
+.parameter {
+    background-color: #dddfeb;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 0.5vh 1.5vw;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vh;
+}
+
+.parameterValue {
+    color: #516086;
+    /* margin-bottom: 10px; */
+}
+
+.parameterIcon {
+    font-size: 3vw;
+    color: #D88BCD;
+    /* margin-bottom: 10px; */
+}
+
+.parameterName {
+    color: #9fa9be;
+    font-size: 1.2vw;
+}
