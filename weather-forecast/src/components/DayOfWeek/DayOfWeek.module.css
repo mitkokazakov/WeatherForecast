@@ -1,0 +1,49 @@
+.weekDay{
+    padding: 0.5vh 0.5vw;
+    width: 20%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #E0E3ED;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: #8290AC;
+}
+
+/* .weekDayDate{
+
+} */
+
+.weekDayIconDegrees{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.weekDayIcon{
+    font-size: 4vw;
+    color: #8290AC;
+}
+
+.weekDayDegrees{
+    display: flex;
+    flex-direction: column;
+}
+
+.weekDayMaxTemp{
+    font-size: 2.5vw;
+    font-weight: 10;
+    color: #7B8AA7;
+}
+
+.weekDayMinTemp{
+    font-size: 1.5vw;
+    font-weight: 100;
+    color: #B6BFD1;
+}
+
+/* .weekDayForecast{
+
+} */

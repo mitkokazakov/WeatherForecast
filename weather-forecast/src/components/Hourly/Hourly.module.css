@@ -1,0 +1,16 @@
+.hourly{
+    grid-column: 2 / 4;
+    grid-row: 3 / 6;
+    background-color: #D1D6E4;
+    border-radius: 20px;
+    padding: 70px 20px 20px 20px;
+    position: relative;
+}
+
+.hourlyHeading{
+    position: absolute;
+    font-weight: 100;
+    top: 20px;
+    left: 30px;
+    color: #7D8BA7;
+}

@@ -1,0 +1,21 @@
+.weekly{
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    background-color: #D1D6E4;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    padding: 25px 5px 0px 5px;
+}
+
+.weeklyHeading{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    color: #7D8BA7;
+    font-weight: 100;
+    font-size: 1.3vw;
+}
