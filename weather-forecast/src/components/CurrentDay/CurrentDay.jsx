@@ -5,7 +5,7 @@ import { faMagnifyingGlass, faCloud } from '@fortawesome/free-solid-svg-icons'
 import Parameter from '../Parameter/Parameter'
 
 
-function CurrentDay() {
+function CurrentDay({weatherInfo}) {
     return (
         <div className={style.currentDay}>
             <form action="" className={style.currentDayForm}>
@@ -23,19 +23,19 @@ function CurrentDay() {
                 <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} />
 
                 <div className={style.currentDayTemperature}>
-                    <p className={style.currentDayTemp}>20<span className={style.currentDayTempDegrees}>°C</span></p>
-                    <p className={style.currentDayForecast}>Sunny</p>
-                    <p className={style.currentDayDate}>Tuesday, 2 pm</p>
+                    <p className={style.currentDayTemp}>{weatherInfo.currentTemp}<span className={style.currentDayTempDegrees}>°C</span></p>
+                    <p className={style.currentDayForecast}>{weatherInfo.currentWeatherText}</p>
+                    <p className={style.currentDayDate}>{weatherInfo.currentTime}</p>
                 </div>
             </div>
 
             <div className={style.currentDayDetails}>
-                <Parameter />
-                <Parameter />
-                <Parameter />
-                <Parameter />
-                <Parameter />
-                <Parameter />
+                <Parameter parameterName = {'Feels like'} parameterValue = {weatherInfo.feelsLike + ' °C'}/>
+                <Parameter parameterName={'Humidity'} parameterValue={weatherInfo.humidity + ' %'}/>
+                <Parameter parameterName={'Visibility'} parameterValue={weatherInfo.visibility + ' km'}/>
+                <Parameter parameterName={'Wind'} parameterValue={weatherInfo.wind + ' km/h'}/>
+                <Parameter parameterName={'Sunrise'} parameterValue={weatherInfo.sunrise}/>
+                <Parameter parameterName={'Sunset'} parameterValue={weatherInfo.sunset}/>
 
             </div>
         </div>
