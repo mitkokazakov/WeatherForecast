@@ -67,6 +67,11 @@
     color: #8290AC;
 }
 
+.currentDayInfoImg{
+    width: 120px;
+    height: 120px;
+}
+
 .currentDayTemperature {
     display: flex;
     flex-direction: column;

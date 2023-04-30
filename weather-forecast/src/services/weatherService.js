@@ -1,11 +1,23 @@
 
 const apiKey = 'a5254b2031874dbeb49115909230304';
 
-const baseURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&aqi=no&days=3&q=selfoss`;
+const baseURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&aqi=no&days=3&q=`;
 
 export const getDailyWeatherInfo = (city) => {
 
     return fetch(baseURL).then(result => result.json());
+
+}
+
+export const getAllData = async (city) => {
+
+    let response = await fetch(baseURL + city);
+
+    let data = await response.json();
+
+    return data;
+
+    //return fetch(baseURL).then(result => result.json());
 
 }
 
@@ -44,4 +56,41 @@ export const getCityByLocation = async () => {
     let data = await response.json();
 
     return data.city;
+}
+
+export const currentDayInformation = (data) => {
+
+    let sunrise = data.forecast.forecastday[0].astro.sunrise;
+    let sunset = data.forecast.forecastday[0].astro.sunset;
+
+    let formattedSunrise = null;
+    let formattedSunset = null;
+
+    if(sunrise[0] == '0'){
+        formattedSunrise = sunrise.slice(1);
+    }
+    else{
+        formattedSunrise = sunrise
+    }
+
+    if(sunset[0] == '0'){
+        formattedSunset = sunset.slice(1);
+    }
+    else{
+        formattedSunset = sunset;
+    }
+
+    return {
+        currentTemp: data.current.temp_c,
+        feelsLike: data.current.feelslike_c,
+        currentTime: new Date(data.location.localtime).toLocaleDateString('en-US', { weekday: 'long', hour: 'numeric', minute: 'numeric', hour12: true }),
+        currentWeatherText: data.current.condition.text,
+        humidity: data.current.humidity,
+        visibility: data.current.vis_km,
+        wind: data.current.wind_kph,
+        uvIndex: data.current.uv,
+        pressure: data.current.pressure_mb,
+        sunrise: formattedSunrise,
+        sunset: formattedSunset
+    }
 }

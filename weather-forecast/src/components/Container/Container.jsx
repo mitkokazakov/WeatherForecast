@@ -8,50 +8,36 @@ import { useState, useEffect } from 'react'
 
 import * as weatherServices from '../../services/weatherService'
 
-function Container() {
+function Container({city}) {
 
+  //const[city,setCity] = useState(null);
+  const[allData,setAllData] = useState(null);
 
-  const [weatherInfo, setWeatherInfo] = useState({});
+  useEffect(() =>{
 
-  const [cityName, setCityName] = useState('');
+    // const fetchCityName = async () => {
 
+    //   const cityInfo = await weatherServices.getCityByLocation();
 
-  useEffect(() => {
+    //   setCity(cityInfo);
+    // };
 
-    weatherServices.getDailyWeatherInfo('KK').then(data => setWeatherInfo({
-      currentTemp: data.current.temp_c,
-      feelsLike: data.current.feelslike_c,
-      currentTime: new Date(data.location.localtime).toLocaleDateString('en-US', { weekday: 'long', hour: 'numeric', minute: 'numeric', hour12: true }),
-      currentWeatherText: data.current.condition.text,
-      humidity: data.current.humidity,
-      visibility: data.current.vis_km,
-      wind: data.current.wind_kph,
-      uvIndex: data.current.uv,
-      pressure: data.current.pressure_mb,
-      sunrise: data.forecast.forecastday[0].astro.sunrise,
-      sunset: data.forecast.forecastday[0].astro.sunset
-    }));
+    const fetchGlobalData = async () =>{
 
-    const fetchCityName = async () => {
+      let currentGlobalData = await weatherServices.getAllData(city);
 
-      const cityInfo = await weatherServices.getCityByLocation();
+      setAllData(currentGlobalData);
 
-      setCityName(cityInfo);
-    };
+    }
 
-    fetchCityName();
+    //fetchCityName();
+    fetchGlobalData();
 
-  }, []);
-
-
-
-  console.log(weatherInfo);
-
-  console.log(cityName);
+  },[]);
 
   return (
     <div className={style.weatherContainer}>
-      <CurrentDay weatherInfo = {weatherInfo}></CurrentDay>
+      {allData && <CurrentDay data={allData} city={city} ></CurrentDay>}
       <Weekly />
       <Hourly />
     </div>
