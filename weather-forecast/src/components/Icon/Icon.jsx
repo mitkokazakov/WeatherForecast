@@ -1,9 +1,13 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useContext } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass,faMoon, faCloud, faSun, faCloudRain, faCloudShowersHeavy, faSnowflake,faCloudSun } from '@fortawesome/free-solid-svg-icons'
 
+import WeatherContext from '../WeatherContext/WeatherContext';
+
 function Icon({classToBe,text}) {
+
+    const {city,setCity} = useContext(WeatherContext);
 
     const[sun,setSun] = useState(null);
     const[cloud,setCloud] = useState(null);
@@ -14,6 +18,13 @@ function Icon({classToBe,text}) {
 
     useEffect(() => {
 
+        setSun(null);
+        setCloud(null);
+        setRain(null);
+        setPartlyCloud(null);
+        setSnow(null);
+        setClear(null);
+
         if(text.toLowerCase().includes('clear')){
             setClear('clear');
         }
@@ -23,23 +34,27 @@ function Icon({classToBe,text}) {
         }
 
         if(text.toLowerCase().includes('cloud')){
-            setCloud('cloud');
+
+            if(text.toLowerCase().includes('partly cloud')){
+                setPartlyCloud('partly cloud');
+            }
+            else{
+                setCloud('cloud');
+            }
+            
         }
 
         if(text.toLowerCase().includes('snow')){
             setSnow('snow');
         }
 
-        if(text.toLowerCase().includes('partly cloud')){
-            setPartlyCloud('partly cloud');
-        }
 
         if(text.toLowerCase().includes('sun')){
             setSun('sun');
         }
 
         
-    },[]);
+    },[text]);
 
   return (
     <div>

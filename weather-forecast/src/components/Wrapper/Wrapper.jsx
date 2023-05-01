@@ -2,6 +2,7 @@ import React from 'react'
 import style from '../Wrapper/Wrapper.module.css'
 import NavBar from '../NavBar/NavBar'
 import Container from '../Container/Container'
+import WeatherContext from '../WeatherContext/WeatherContext'
 
 import { useState, useEffect } from 'react';
 
@@ -9,9 +10,9 @@ import * as weatherServices from '../../services/weatherService'
 
 function Wrapper() {
 
-  const[city,setCity] = useState(null);
+  const [city, setCity] = useState(null);
 
-  useEffect(() =>{
+  useEffect(() => {
 
     const fetchCityName = async () => {
 
@@ -22,13 +23,19 @@ function Wrapper() {
 
     fetchCityName();
 
-  },[]);
+    console.log(city);
+
+  }, []);
+
+  console.log(city);
 
   return (
 
     <div className={style.wrapper}>
-      <NavBar></NavBar>
-      {city && <Container city={city}></Container>}
+      <WeatherContext.Provider value={{city,setCity}}>
+        <NavBar></NavBar>
+        {city && <Container city={city}></Container>}
+      </WeatherContext.Provider>
     </div>
   )
 }

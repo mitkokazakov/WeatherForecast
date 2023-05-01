@@ -8,25 +8,39 @@ import WeatherContext from '../WeatherContext/WeatherContext'
 
 import * as weatherServices from '../../services/weatherService'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
-function CurrentDay({ data, city }) {
+import { register,useForm } from 'react-hook-form';
+
+function CurrentDay({ data }) {
 
     const [currentDayWeather, setCurrentDayWeather] = useState(null);
+    const { handleSubmit } = useForm();
+    const {city,setCity} = useContext(WeatherContext);
 
     useEffect(() => {
 
         let currentDay = weatherServices.currentDayInformation(data);
 
         setCurrentDayWeather(currentDay)
-    }, []);
+    }, [data]);
+
+    function onSubmitFindCityHandler(data, e) {
+
+        e.preventDefault();
+        
+        setCity(e.target.cityName.value);
+
+        console.log(e.target.cityName.value);
+
+    }
 
     return (
 
         <div className={style.currentDay}>
 
-            {currentDayWeather && <form action="" className={style.currentDayForm}>
-                <input type="text" className={style.currentDayInput} placeholder="Search.." />
+            {currentDayWeather && <form method='get' className={style.currentDayForm} onSubmit={handleSubmit(onSubmitFindCityHandler)}>
+                <input type="text" id="cityName" name='cityName' className={style.currentDayInput} placeholder="Search.." />
                 <button type="submit" className={style.currentDayBtn}>
                     {/* <i class="fa-solid fa-magnifying-glass"></i> */}
                     <FontAwesomeIcon className={style.currentDaySearchIcon} icon={faMagnifyingGlass} />

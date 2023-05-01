@@ -3,24 +3,18 @@ import style from '../Container/Container.module.css'
 import CurrentDay from '../CurrentDay/CurrentDay'
 import Weekly from '../Weekly/Weekly'
 import Hourly from '../Hourly/Hourly'
+import WeatherContext from '../WeatherContext/WeatherContext'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 import * as weatherServices from '../../services/weatherService'
 
-function Container({city}) {
+function Container() {
 
-  //const[city,setCity] = useState(null);
   const[allData,setAllData] = useState(null);
+  const {city,setCity} = useContext(WeatherContext);
 
   useEffect(() =>{
-
-    // const fetchCityName = async () => {
-
-    //   const cityInfo = await weatherServices.getCityByLocation();
-
-    //   setCity(cityInfo);
-    // };
 
     const fetchGlobalData = async () =>{
 
@@ -30,14 +24,13 @@ function Container({city}) {
 
     }
 
-    //fetchCityName();
     fetchGlobalData();
 
-  },[]);
+  },[city]);
 
   return (
     <div className={style.weatherContainer}>
-      {allData && <CurrentDay data={allData} city={city} ></CurrentDay>}
+      {allData && <CurrentDay data={allData} ></CurrentDay>}
       <Weekly />
       <Hourly />
     </div>
