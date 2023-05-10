@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass,faMoon, faCloud, faSun, faCloudRain, faCloudShowersHeavy, faSnowflake,faCloudSun } from '@fortawesome/free-solid-svg-icons'
 
 const apiKey = 'a5254b2031874dbeb49115909230304';
 
@@ -85,12 +87,18 @@ export const currentDayInformation = (data) => {
         feelsLike: data.current.feelslike_c,
         currentTime: new Date(data.location.localtime).toLocaleDateString('en-US', { weekday: 'long', hour: 'numeric', minute: 'numeric', hour12: true }),
         currentWeatherText: data.current.condition.text,
+        code: data.current.condition.code,
         humidity: data.current.humidity,
         visibility: data.current.vis_km,
         wind: data.current.wind_kph,
         uvIndex: data.current.uv,
         pressure: data.current.pressure_mb,
         sunrise: formattedSunrise,
-        sunset: formattedSunset
+        sunset: formattedSunset,
+        isDay: data.current.is_day
     }
+}
+
+export const getProperIcon = (weatherText, styledClass) =>{
+    return(<FontAwesomeIcon className={styledClass} icon={faMoon}></FontAwesomeIcon>);
 }

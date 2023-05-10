@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../CurrentDay/CurrentDay.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faCloud, faSun, faCloudRain, faCloudShowersHeavy, faSnowflake } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import Parameter from '../Parameter/Parameter'
 import Icon from '../Icon/Icon'
 import WeatherContext from '../WeatherContext/WeatherContext'
@@ -10,7 +10,7 @@ import * as weatherServices from '../../services/weatherService'
 
 import { useState, useEffect, useContext } from 'react'
 
-import { register,useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 function CurrentDay({ data }) {
 
@@ -42,7 +42,6 @@ function CurrentDay({ data }) {
             {currentDayWeather && <form method='get' className={style.currentDayForm} onSubmit={handleSubmit(onSubmitFindCityHandler)}>
                 <input type="text" id="cityName" name='cityName' className={style.currentDayInput} placeholder="Search.." />
                 <button type="submit" className={style.currentDayBtn}>
-                    {/* <i class="fa-solid fa-magnifying-glass"></i> */}
                     <FontAwesomeIcon className={style.currentDaySearchIcon} icon={faMagnifyingGlass} />
                 </button>
             </form>}
@@ -51,14 +50,7 @@ function CurrentDay({ data }) {
 
             {currentDayWeather && <div className={style.currentDayInfo}>
                 
-                <Icon classToBe={style.currentDayInfoIcon} text={currentDayWeather.currentWeatherText}></Icon>
-                {/* <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} /> */}
-                {/* <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} />
-                <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} />
-                <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} />
-                <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} />
-                <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} />
-                <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloud} /> */}
+                <Icon code={currentDayWeather.code} isDay={currentDayWeather.isDay} text={currentDayWeather.currentWeatherText}></Icon>
 
                 <div className={style.currentDayTemperature}>
                     <p className={style.currentDayTemp}>{currentDayWeather.currentTemp}<span className={style.currentDayTempDegrees}>°C</span></p>
