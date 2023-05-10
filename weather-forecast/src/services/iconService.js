@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon, faCloud, faSun, faCloudRain, faSnowflake,faCloudSun,faSmog,faCloudBolt,faWind,faCloudShowersHeavy, faCloudShowersWater, faIcicles, faCloudSunRain, faCloudMoon, faCloudMoonRain } from '@fortawesome/free-solid-svg-icons'
+import { faMoon, faCloud, faSun, faCloudRain, faSnowflake,faCloudSun,faSmog,faCloudBolt,faWind,faCloudShowersHeavy, faCloudShowersWater, faIcicles, faCloudSunRain, faCloudMoon, faCloudMoonRain, faTemperatureHigh,faDroplet,faEye,faMountainSun } from '@fortawesome/free-solid-svg-icons'
 
 import style from '../components/CurrentDay/CurrentDay.module.css';
+import styleIconParam from '../components/Parameter/Parameter.module.css';
 
 
 const dayIcons = {
@@ -106,6 +107,15 @@ const nightIcons = {
     1282: <FontAwesomeIcon className={style.currentDayInfoIcon} icon={faCloudBolt}></FontAwesomeIcon>,
 }
 
+const parameterIcons = {
+    Feels: <FontAwesomeIcon className={styleIconParam.parameterIcon} icon={faTemperatureHigh}></FontAwesomeIcon>,
+    Humidity: <FontAwesomeIcon className={styleIconParam.parameterIcon} icon={faDroplet}></FontAwesomeIcon>,
+    Visibility: <FontAwesomeIcon className={styleIconParam.parameterIcon} icon={faEye}></FontAwesomeIcon>,
+    Wind: <FontAwesomeIcon className={styleIconParam.parameterIcon} icon={faWind}></FontAwesomeIcon>,
+    Sunrise: <FontAwesomeIcon className={styleIconParam.parameterIcon} icon={faSun}></FontAwesomeIcon>,
+    Sunset: <FontAwesomeIcon className={styleIconParam.parameterIcon} icon={faMountainSun}></FontAwesomeIcon>,
+}
+
 export const fetchIcons = (code, isDay) => {
 
     if(isDay == 1){
@@ -114,5 +124,11 @@ export const fetchIcons = (code, isDay) => {
     else{
         return (nightIcons[code]);
     }
+    
+}
+
+export const fetchSingleParameterIcon = (parameterName) => {
+
+    return(parameterIcons[parameterName]);
     
 }

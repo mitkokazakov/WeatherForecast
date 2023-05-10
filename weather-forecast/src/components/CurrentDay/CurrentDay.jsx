@@ -60,7 +60,7 @@ function CurrentDay({ data }) {
             </div>}
 
             {currentDayWeather && <div className={style.currentDayDetails}>
-                <Parameter parameterName={'Feels like'} parameterValue={currentDayWeather.feelsLike + ' °C'} />
+                <Parameter parameterName={'Feels'} parameterValue={currentDayWeather.feelsLike + ' °C'} />
                 <Parameter parameterName={'Humidity'} parameterValue={currentDayWeather.humidity + ' %'} />
                 <Parameter parameterName={'Visibility'} parameterValue={currentDayWeather.visibility + ' km'} />
                 <Parameter parameterName={'Wind'} parameterValue={currentDayWeather.wind + ' km/h'} />
