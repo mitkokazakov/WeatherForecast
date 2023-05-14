@@ -137,3 +137,65 @@ export const fetchThreeDayForecast = (data) => {
     return threeDaysArray;
 
 }
+
+export const fetchHourlyData = (data) =>{
+
+    let currentDayHourly = {
+        0: '',
+        6: '',
+        8: '',
+        10: '',
+        12: '',
+        14: '',
+        16: '',
+        18: '',
+        20: '',
+        22: '',
+    }
+
+    let hourlyArray = [];
+
+    let currentDayByHours = data.forecast.forecastday[0].hour;
+
+    for (const [key, value] of Object.entries(currentDayHourly)) {
+
+        let temp = currentDayByHours[key].temp_c;
+
+        hourlyArray.push(temp);
+
+        currentDayHourly[key] = temp;
+    }
+
+    return hourlyArray;
+}
+
+export const fetchHourlyDataToString = (data) =>{
+
+    let currentDayHourly = {
+        0: '',
+        6: '',
+        8: '',
+        10: '',
+        12: '',
+        14: '',
+        16: '',
+        18: '',
+        20: '',
+        22: '',
+    }
+
+    let hourlyArray = [];
+
+    let currentDayByHours = data.forecast.forecastday[0].hour;
+
+    for (const [key, value] of Object.entries(currentDayHourly)) {
+
+        let temp = currentDayByHours[key].temp_c;
+
+        hourlyArray.push(temp + '°C');
+
+        currentDayHourly[key] = temp;
+    }
+
+    return hourlyArray;
+}

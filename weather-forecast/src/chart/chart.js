@@ -3,7 +3,7 @@ const ctx = document.getElementById('myChart');
 new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['6 am', '8 am', '10 am', '12 pm', '2 pm', '4 pm', '6 pm', '8 pm', '10 pm', '12 pm'],
+        labels: ['12 am', '6 am', '8 am', '10 am', '12 pm', '2 pm', '4 pm', '6 pm', '8 pm', '10 pm'],
         datasets: [{
             label: 'Temperature °C',
             data: [3, 5, 6, 10, 14, 13, 10, 8, 4, 2],

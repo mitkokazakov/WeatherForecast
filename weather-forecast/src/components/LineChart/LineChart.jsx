@@ -2,13 +2,13 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS } from 'chart.js/auto'
 
-function LineChart() {
+function LineChart({ hourlyData,hourlyDataToString }) {
 
     const data = {
-        labels: ['6 am', '8 am', '10 am', '12 pm', '2 pm', '4 pm', '6 pm', '8 pm', '10 pm', '12 pm'],
+        labels: ['12 am', '6 am', '8 am', '10 am', '12 pm', '2 pm', '4 pm', '6 pm', '8 pm', '10 pm'],
         datasets: [{
             label: 'Temperature °C',
-            data: [3, 5, 6, 10, 14, 13, 10, 8, 4, 2],
+            data: hourlyData,
             borderWidth: 3,
             borderColor: '#CF7AC3',
         }]
@@ -62,7 +62,7 @@ function LineChart() {
             },
             x2: {
                 position: 'top',
-                labels: ['3°C', '5°C', '6°C', '10°C', '14°C', '13°C', '10°C', '8°C', '4°C', '2°C'],
+                labels: hourlyDataToString,
                 grid: {
                     display: false
                 },
@@ -78,7 +78,10 @@ function LineChart() {
     }
 
     return (
-            <Line data={data} options={options}/>
+        <>
+            {hourlyData && <Line data={data} options={options} />}
+        </>
+
     )
 }
 
