@@ -95,7 +95,9 @@ export const currentDayInformation = (data) => {
         pressure: data.current.pressure_mb,
         sunrise: formattedSunrise,
         sunset: formattedSunset,
-        isDay: data.current.is_day
+        isDay: data.current.is_day,
+        townName: data.location.name,
+        country: data.location.country
     }
 }
 

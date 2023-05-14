@@ -46,7 +46,7 @@ function CurrentDay({ data }) {
                 </button>
             </form>}
 
-            <p className={style.city}>{city}</p>
+            <p className={style.city}>{currentDayWeather.townName}, {currentDayWeather.country}</p>
 
             {currentDayWeather && <div className={style.currentDayInfo}>
                 
