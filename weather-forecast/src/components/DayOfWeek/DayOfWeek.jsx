@@ -1,23 +1,26 @@
 import React from 'react'
 import style from '../DayOfWeek/DayOfWeek.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun } from '@fortawesome/free-regular-svg-icons'
 
-function DayOfWeek() {
+import Icon from '../Icon/Icon'
+
+
+function DayOfWeek({weatherInfo}) {
+
+    
     return (
         <div className={style.weekDay}>
-            <p className={style.weekDayDate}>Mon 23</p>
+            {weatherInfo && <p className={style.weekDayDate}>{weatherInfo.date}</p>}
 
             <div className={style.weekDayIconDegrees}>
-                {/* <i class="fa-regular fa-sun"></i> */}
-                <FontAwesomeIcon className={style.weekDayIcon} icon={faSun} />
+                {/* <FontAwesomeIcon className={style.weekDayIcon} icon={faSun} /> */}
+                {weatherInfo && <Icon code={weatherInfo.code} isDay={1} text={weatherInfo.forecast} currentClassStyle={style.weekDayIcon}></Icon>}
                 <div className={style.weekDayDegrees}>
-                    <p className={style.weekDayMaxTemp}>23°</p>
-                    <p className={style.weekDayMinTemp}>10°</p>
+                    {weatherInfo && <p className={style.weekDayMaxTemp}>{weatherInfo.maxTemp}°</p>}
+                    {weatherInfo && <p className={style.weekDayMinTemp}>{weatherInfo.minTemp}°</p>}
                 </div>
             </div>
 
-            <p className={style.weekDayForecast}>Sunny</p>
+            {weatherInfo && <p className={style.weekDayForecast}>{weatherInfo.forecast}</p>}
 
         </div>
     )

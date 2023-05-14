@@ -31,7 +31,7 @@ function Container() {
   return (
     <div className={style.weatherContainer}>
       {allData && <CurrentDay data={allData} ></CurrentDay>}
-      <Weekly />
+      {allData && <Weekly data={allData}/>}
       <Hourly />
     </div>
   )

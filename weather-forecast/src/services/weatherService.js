@@ -102,3 +102,36 @@ export const currentDayInformation = (data) => {
 export const getProperIcon = (weatherText, styledClass) =>{
     return(<FontAwesomeIcon className={styledClass} icon={faMoon}></FontAwesomeIcon>);
 }
+
+export const fetchThreeDayForecast = (data) => {
+
+    let threeDaysArray = [];
+
+    for (let index = 0; index < 3; index++) {
+
+        let threeDaysforecast = data.forecast.forecastday[index];
+
+        let currentDayDate = new Date(threeDaysforecast.date);
+
+        let currentFormattedDayDate = currentDayDate.toLocaleString('en-US', { weekday: 'short', day: 'numeric' });
+
+        let currentDayMaxTemp = threeDaysforecast.day.maxtemp_c;
+        let currentDayMinTemp = threeDaysforecast.day.mintemp_c;
+        let currentDayCode = threeDaysforecast.day.condition.code;
+        let currentDayForecast = threeDaysforecast.day.condition.text;
+
+        let currentObj = {
+            date: currentFormattedDayDate,
+            maxTemp: currentDayMaxTemp,
+            minTemp: currentDayMinTemp,
+            code: currentDayCode,
+            forecast: currentDayForecast
+        }
+
+        threeDaysArray.push(currentObj);
+
+    }
+
+    return threeDaysArray;
+
+}

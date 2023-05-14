@@ -50,7 +50,7 @@ function CurrentDay({ data }) {
 
             {currentDayWeather && <div className={style.currentDayInfo}>
                 
-                <Icon code={currentDayWeather.code} isDay={currentDayWeather.isDay} text={currentDayWeather.currentWeatherText}></Icon>
+                <Icon code={currentDayWeather.code} isDay={currentDayWeather.isDay} text={currentDayWeather.currentWeatherText} currentClassStyle={style.currentDayInfoIcon}></Icon>
 
                 <div className={style.currentDayTemperature}>
                     <p className={style.currentDayTemp}>{currentDayWeather.currentTemp}<span className={style.currentDayTempDegrees}>°C</span></p>

@@ -24,7 +24,9 @@ function Parameter({parameterName, parameterValue}) {
             
             {/* <FontAwesomeIcon className={style.parameterIcon} icon={faSun} /> */}
 
-            {parameterIcon && parameterIcon}
+           <div className={style.parameterIcon}>
+           {parameterIcon && parameterIcon}
+           </div>
 
             <p className={style.parameterName}>{parameterName}</p>
         </div>

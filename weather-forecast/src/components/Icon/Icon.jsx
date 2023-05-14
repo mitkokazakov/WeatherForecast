@@ -2,7 +2,7 @@ import React, { useState,useEffect,useContext } from 'react'
 
 import * as iconService from '../../services/iconService'
 
-function Icon({code,isDay,text}) {
+function Icon({code,isDay,text,currentClassStyle}) {
 
 
     const [currentIcon,setCurrentIcon] = useState(null);
@@ -18,7 +18,7 @@ function Icon({code,isDay,text}) {
 
 
   return (
-    <div>
+    <div className={currentClassStyle}>
         
         {currentIcon && currentIcon}
 
