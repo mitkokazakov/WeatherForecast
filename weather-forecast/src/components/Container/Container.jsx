@@ -7,6 +7,8 @@ import WeatherContext from '../WeatherContext/WeatherContext'
 
 import { useState, useEffect, useContext } from 'react'
 
+import Swal from 'sweetalert2'
+
 import * as weatherServices from '../../services/weatherService'
 
 function Container() {
@@ -20,7 +22,17 @@ function Container() {
 
       let currentGlobalData = await weatherServices.getAllData(city);
 
-      setAllData(currentGlobalData);
+      if(currentGlobalData.hasOwnProperty('error')){
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Wrong town name! Please insert correct town!'
+        })
+      }
+      else{
+
+        setAllData(currentGlobalData);
+      }
 
     }
 
