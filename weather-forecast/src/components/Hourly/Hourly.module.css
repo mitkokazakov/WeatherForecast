@@ -15,7 +15,15 @@
     color: #7D8BA7;
 }
 
-/* .chart{
-    width: 400px;
-    height: 100px;
-} */
+@media screen and (max-width: 480px){
+    .hourly{
+        height: 37%;
+        padding: 50px 0px;
+    }
+
+    .hourlyHeading{
+        font-size: 4vw;
+        left: 20px;
+        top: 10px;
+    }
+}

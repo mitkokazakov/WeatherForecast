@@ -20,3 +20,27 @@
     font-weight: bold;
     font-size: 1vw;
 }
+
+@media screen and (max-width: 480px) {
+    .nav {
+        height: 3%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo{
+        display: flex;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .logoHeading{
+        font-size: 3vw;
+    }
+
+    .logoParagraph{
+        font-size: 3vw;
+    }
+}

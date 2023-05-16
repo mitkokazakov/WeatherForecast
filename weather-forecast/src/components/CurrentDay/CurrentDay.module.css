@@ -106,3 +106,52 @@
     gap: 1vw;
     margin-top: 1vh;
 }
+
+@media screen and (max-width: 860px){
+    .currentDayTempDegrees{
+        top: 13px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    
+    .currentDay{
+        gap: 1.5vh;
+    }
+
+    .currentDaySearchIcon{
+        font-size: 3.5vw;
+    }
+
+    .city{
+        font-size: 4vw;
+    }
+
+    .currentDayInfo{
+        gap: 6vw;
+    }
+
+    .currentDayInfoIcon{
+        font-size: 16vw;
+    }
+
+    .currentDayTemp{
+        font-size: 11vw;
+    }
+
+    .currentDayTempDegrees{
+        font-size: 5vw;
+        top: 9px;
+    }
+
+    .currentDayForecast, .currentDayDate{
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .currentDayDetails{
+        gap: 4vw;
+    }
+
+    
+}

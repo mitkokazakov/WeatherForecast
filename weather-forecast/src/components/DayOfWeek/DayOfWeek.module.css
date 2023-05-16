@@ -44,6 +44,26 @@
     color: #B6BFD1;
 }
 
-/* .weekDayForecast{
+@media screen and (max-width: 480px){
+    .weekDay{
+        padding: 0.5vh 1vw;
+        width: 30%;
+        height: 98%;
+    }
 
-} */
+    .weekDay .weekDayDate, .weekDayForecast{
+        font-size: 3vw;
+    }
+
+    .weekDayIcon{
+        font-size: 5vw;
+    }
+
+    .weekDayDegrees .weekDayMaxTemp{
+        font-size: 3.5vw;
+    }
+
+    .weekDayDegrees .weekDayMinTemp{
+        font-size: 3vw;
+    }
+}

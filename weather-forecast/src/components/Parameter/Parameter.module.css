@@ -29,3 +29,28 @@
     color: #9fa9be;
     font-size: 1.2vw;
 }
+
+@media screen and (max-width: 860px){
+    .parameter{
+        padding: 5px 10px;;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .parameter{
+        gap: 0.8vh;
+        width: 28%;
+    }
+
+    .parameterValue{
+        font-size: 3vw;
+    }
+
+    .parameterIcon{
+        font-size: 5vw;
+    }
+
+    .parameterName{
+        font-size: 3vw;
+    }
+}

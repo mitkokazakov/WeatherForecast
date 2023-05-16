@@ -7,3 +7,12 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
+
+@media screen and (max-width: 480px){
+
+    .weatherContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 20px 20px;
+    }
+}

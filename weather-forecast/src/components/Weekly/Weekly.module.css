@@ -19,3 +19,15 @@
     font-weight: 100;
     font-size: 1.3vw;
 }
+
+@media screen and (max-width: 480px){
+    .weekly{
+        padding: 4vh 2vw 1vh 2vw;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .weeklyHeading{
+        font-size: 3.5vw;
+    }
+}
