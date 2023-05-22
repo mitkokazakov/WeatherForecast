@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass,faMoon, faCloud, faSun, faCloudRain, faCloudShowersHeavy, faSnowflake,faCloudSun } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faMoon, faCloud, faSun, faCloudRain, faCloudShowersHeavy, faSnowflake, faCloudSun } from '@fortawesome/free-solid-svg-icons'
 
 const apiKey = 'a5254b2031874dbeb49115909230304';
 
@@ -10,6 +10,9 @@ export const getDailyWeatherInfo = (city) => {
     return fetch(baseURL).then(result => result.json());
 
 }
+
+
+
 
 export const getAllData = async (city) => {
 
@@ -68,19 +71,20 @@ export const currentDayInformation = (data) => {
     let formattedSunrise = null;
     let formattedSunset = null;
 
-    if(sunrise[0] == '0'){
+    if (sunrise[0] == '0') {
         formattedSunrise = sunrise.slice(1);
     }
-    else{
+    else {
         formattedSunrise = sunrise
     }
 
-    if(sunset[0] == '0'){
+    if (sunset[0] == '0') {
         formattedSunset = sunset.slice(1);
     }
-    else{
+    else {
         formattedSunset = sunset;
     }
+
 
     return {
         currentTemp: data.current.temp_c,
@@ -101,8 +105,8 @@ export const currentDayInformation = (data) => {
     }
 }
 
-export const getProperIcon = (weatherText, styledClass) =>{
-    return(<FontAwesomeIcon className={styledClass} icon={faMoon}></FontAwesomeIcon>);
+export const getProperIcon = (weatherText, styledClass) => {
+    return (<FontAwesomeIcon className={styledClass} icon={faMoon}></FontAwesomeIcon>);
 }
 
 export const fetchThreeDayForecast = (data) => {
@@ -138,7 +142,7 @@ export const fetchThreeDayForecast = (data) => {
 
 }
 
-export const fetchHourlyData = (data) =>{
+export const fetchHourlyData = (data) => {
 
     let currentDayHourly = {
         0: '',
@@ -169,7 +173,7 @@ export const fetchHourlyData = (data) =>{
     return hourlyArray;
 }
 
-export const fetchHourlyDataToString = (data) =>{
+export const fetchHourlyDataToString = (data) => {
 
     let currentDayHourly = {
         0: '',
