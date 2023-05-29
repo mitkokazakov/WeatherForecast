@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 480px){
     .hourly{
-        height: 37%;
+        /* height: 37%; */
         padding: 50px 0px;
     }
 

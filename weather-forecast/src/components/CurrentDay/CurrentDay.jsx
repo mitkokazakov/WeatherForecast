@@ -7,6 +7,7 @@ import Icon from '../Icon/Icon'
 import WeatherContext from '../WeatherContext/WeatherContext'
 
 import * as weatherServices from '../../services/weatherService'
+import * as citiesService from '../../services/citiesService'
 
 import { useState, useEffect, useContext } from 'react'
 
@@ -15,8 +16,9 @@ import { useForm } from 'react-hook-form';
 function CurrentDay({ data }) {
 
     const [currentDayWeather, setCurrentDayWeather] = useState(null);
+    const [cities, setCities] = useState(null);
     const { handleSubmit } = useForm();
-    const {city,setCity} = useContext(WeatherContext);
+    const { city, setCity } = useContext(WeatherContext);
 
     useEffect(() => {
 
@@ -28,11 +30,45 @@ function CurrentDay({ data }) {
     function onSubmitFindCityHandler(data, e) {
 
         e.preventDefault();
-        
-        setCity(e.target.cityName.value);
 
-        console.log(e.target.cityName.value);
+        let currentValue = e.target.cityName.value;
 
+        if (currentValue.includes(",")) {
+
+            let index = currentValue.indexOf(",");
+
+            currentValue = currentValue.substring(0, index + 1);
+        }
+
+        // setCity(e.target.cityName.value);
+
+        setCity(currentValue)
+
+    }
+
+    function onChangeInputHandler(e) {
+
+        let currentInput = e.target.value;
+
+        citiesService.fetchData(currentInput).then(data => setCities(data));
+
+        let suggestionsContainer = document.querySelector('#suggestionContainer')
+
+        suggestionsContainer.style.setProperty("display", "block");
+
+    }
+
+    function onCLickCityEvent(e) {
+
+        let currentTown = e.target.innerHTML;
+
+        let inputReference = document.querySelector('#cityName');
+        let suggestionsContainer = document.querySelector('#suggestionContainer')
+
+        inputReference.value = currentTown;
+
+        // suggestionsContainer.classList.add('closed');
+        suggestionsContainer.style.setProperty("display", "none");
     }
 
     return (
@@ -40,16 +76,19 @@ function CurrentDay({ data }) {
         <div className={style.currentDay}>
 
             {currentDayWeather && <form method='get' className={style.currentDayForm} onSubmit={handleSubmit(onSubmitFindCityHandler)}>
-                <input type="text" id="cityName" name='cityName' className={style.currentDayInput} placeholder="Search.." />
+                <input type="text" id="cityName" name='cityName' className={style.currentDayInput} placeholder="Search.." onChange={onChangeInputHandler} />
                 <button type="submit" className={style.currentDayBtn}>
                     <FontAwesomeIcon className={style.currentDaySearchIcon} icon={faMagnifyingGlass} />
                 </button>
+                <div id='suggestionContainer' className={style.suggestions}>
+                    {cities && cities.map(c => { return <p key={c.population} onClick={onCLickCityEvent}>{c.name}, {c.country}</p> })}
+                </div>
             </form>}
 
             {currentDayWeather && <p className={style.city}>{currentDayWeather.townName}, {currentDayWeather.country}</p>}
 
             {currentDayWeather && <div className={style.currentDayInfo}>
-                
+
                 <Icon code={currentDayWeather.code} isDay={currentDayWeather.isDay} text={currentDayWeather.currentWeatherText} currentClassStyle={style.currentDayInfoIcon}></Icon>
 
                 <div className={style.currentDayTemperature}>
