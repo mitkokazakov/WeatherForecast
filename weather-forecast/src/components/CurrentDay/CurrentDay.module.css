@@ -30,24 +30,10 @@
     font-style: bold;
 }
 
-/* .currentDayInput:focus~.suggestions{
-    position: relative;
-    width: 100%;
-    height: 200px;
-    border: 1px solid white;
-    border-radius: 20px;
-    border-top: none;
-    background-color: transparent;
-    backdrop-filter: blur(5px);
-    z-index: 100;
-    transition: all 200ms linear;
-    text-align: left;
-    overflow: hidden;
-} */
 
 .suggestions {
     width: 100%;
-    position: fixed;
+    position: relative;
     /* border: 1px solid white; */
     border-radius: 20px;
     border-top: none;

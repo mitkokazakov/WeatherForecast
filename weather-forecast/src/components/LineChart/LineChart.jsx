@@ -26,7 +26,7 @@ function LineChart({ hourlyData,hourlyDataToString }) {
             }
         },
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: false
