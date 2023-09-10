@@ -8,7 +8,7 @@
     flex-direction: column;
     gap: 2.5vh;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .currentDayForm {
@@ -33,7 +33,8 @@
 
 .suggestions {
     width: 100%;
-    position: relative;
+    position: sticky;
+    /* bottom: -300px; */
     /* border: 1px solid white; */
     border-radius: 20px;
     border-top: none;
