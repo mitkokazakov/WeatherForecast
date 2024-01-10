@@ -1,49 +1,49 @@
 .currentDay {
-    grid-column: 1 / 2;
-    grid-row: 1 / 6;
-    background-color: #D1D6E4;
-    border-radius: 20px;
-    padding: 1.5vh 1.5vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5vh;
-    align-items: center;
-    justify-content: space-between;
+  grid-column: 1 / 2;
+  grid-row: 1 / 6;
+  background-color: #d1d6e4;
+  border-radius: 20px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .currentDayForm {
-    width: 100%;
-    height: 7%;
-    position: relative;
-    transition: all 200ms linear;
+  width: 100%;
+  height: 7%;
+  position: relative;
+  transition: all 200ms linear;
 }
 
 .currentDayInput {
-    width: 100%;
-    height: 100%;
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: transparent;
-    padding: 5px 10px;
-    outline: none;
-    color: #7B8AA7;
-    font-style: bold;
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 5px 20px;
+  outline: none;
+  color: #7b8aa7;
+  font-style: bold;
+  font-size: 22px;
 }
 
-
 .suggestions {
-    width: 100%;
-    position: sticky;
-    /* bottom: -300px; */
-    /* border: 1px solid white; */
-    border-radius: 20px;
-    border-top: none;
-    background-color: transparent;
-    backdrop-filter: blur(5px);
-    z-index: 100;
-    transition: all 200ms linear;
-    text-align: center;
-    overflow: hidden;
+  width: 100%;
+  position: sticky;
+  /* bottom: -300px; */
+  /* border: 1px solid white; */
+  border-radius: 20px;
+  border-top: none;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  transition: all 200ms linear;
+  text-align: center;
+  overflow: hidden;
 }
 
 /* .closed{
@@ -51,143 +51,204 @@
   } */
 
 .suggestions p {
-    text-align: center;
-    font-style: bold;
-    font-size: 19px;
-    padding: 5px 10px;
-    color: white;
-    cursor: pointer;
-    margin-top: 0;
-    margin-bottom: 0;
+  text-align: center;
+  font-style: bold;
+  font-size: 19px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .currentDayInput::placeholder {
-    color: #7B8AA7;
+  color: #7b8aa7;
 }
 
 .currentDayBtn {
-    height: 100%;
-    position: absolute;
-    right: 15px;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 15px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .currentDaySearchIcon {
-    font-size: 1.5vw;
-    transform: rotateY(180deg);
-    color: #7B8AA7;
+  font-size: 28px;
+  transform: rotateY(180deg);
+  color: #7b8aa7;
 }
 
 .city {
-    font-size: 2vw;
-    font-weight: 400;
-    color: #8290AC;
+  font-size: 40px;
+  font-weight: 400;
+  color: #8290ac;
 }
 
 .currentDayInfo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3vw;
-    /* z-index: 2; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .currentDayInfoIcon {
-    font-size: 8vw;
-    color: #8290AC;
+  font-size: 140px;
+  color: #8290ac;
 }
 
 .currentDayInfoImg {
-    width: 120px;
-    height: 120px;
+  width: 120px;
+  height: 120px;
 }
 
 .currentDayTemperature {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
 }
 
 .currentDayTemp {
-    font-size: 5vw;
-    position: relative;
-    font-weight: 100;
-    color: #8290AC;
+  font-size: 30px;
+  position: relative;
+  font-weight: 100;
+  color: #8290ac;
 }
 
 .currentDayTempDegrees {
-    font-size: 2.5vw;
-    position: absolute;
-    top: 1vw;
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  margin-left: 5px;
 }
 
 .currentDayForecast,
 .currentDayDate {
-    font-size: 1.2vw;
-    font-weight: 100;
-    color: #8290AC;
+  font-size: 22px;
+  font-weight: 100;
+  color: #8290ac;
 }
 
 .currentDayDetails {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1vw;
-    margin-top: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-@media screen and (max-width: 860px) {
-    .currentDayTempDegrees {
-        top: 13px;
+@media screen and (max-width: 1460px) {
+
+    .currentDayDetails{
+        gap: 10px;
     }
+}
+
+@media screen and (max-width: 1200px) {
+  .city {
+    font-size: 32px;
+  }
+
+  .currentDayInfoIcon {
+    font-size: 100px;
+  }
+
+  .currentDayTemp,
+  .currentDayTempDegrees {
+    font-size: 24px;
+  }
+
+  .currentDayForecast,
+  .currentDayDate {
+    font-size: 18px;
+  }
+
+  .currentDayDetails {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .currentDayForm {
+    height: 50px;
+  }
+
+  .currentDayInput {
+    padding: 5px 20px;
+    font-size: 20px;
+  }
+
+  .city {
+    font-size: 38px;
+  }
+
+  .currentDayInfoIcon {
+    font-size: 120px;
+  }
+
+  .currentDayTemp,
+  .currentDayTempDegrees {
+    font-size: 32px;
+  }
+
+  .currentDayForecast,
+  .currentDayDate {
+    font-size: 22px;
+  }
+
+  .currentDayDetails {
+    gap: 25px;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  .currentDay {
+    gap: 50px;
+  }
 
-    .currentDay {
-        gap: 1.5vh;
-    }
+  .currentDayForm{
+    height: 40px;
+  }
 
-    .currentDaySearchIcon {
-        font-size: 3.5vw;
-    }
+  .currentDayInput{
+    padding: 5px 15px;
+    font-size: 16px;
+  }
 
-    .city {
-        font-size: 4vw;
-    }
+  .currentDaySearchIcon {
+    font-size: 20px;
+  }
 
-    .currentDayInfo {
-        gap: 6vw;
-    }
+  .city {
+    font-size: 22px;
+  }
 
-    .currentDayInfoIcon {
-        font-size: 16vw;
-    }
+  .currentDayInfo {
+    gap: 20px;
+  }
 
-    .currentDayTemp {
-        font-size: 11vw;
-    }
+  .currentDayInfoIcon {
+    font-size: 60px;
+  }
 
-    .currentDayTempDegrees {
-        font-size: 5vw;
-        top: 9px;
-    }
+  .currentDayTemp, .currentDayTempDegrees {
+    font-size: 20px;
+  }
 
-    .currentDayForecast,
-    .currentDayDate {
-        font-size: 3vw;
-        text-align: center;
-    }
+  .currentDayForecast,
+  .currentDayDate {
+    font-size: 18px;
+    text-align: center;
+  }
 
-    .currentDayDetails {
-        gap: 4vw;
-    }
-
-
+  .currentDayDetails {
+    gap: 10px;
+  }
 }

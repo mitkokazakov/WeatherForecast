@@ -1,39 +1,56 @@
 .parameter {
     width: 30%;
-    /* height: 47%; */
     background-color: #dddfeb;
     border-radius: 10px;
     border: 1px solid white;
-    padding: 0.5vh 1.5vw;
-    /* text-align: center; */
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.8vh;
+    gap: 10px;
 }
 
 .parameterValue {
     color: #516086;
-    font-size: 14px;
-    /* margin-bottom: 10px; */
+    font-size: 18px;
 }
 
 .parameterIcon {
-    font-size: 3vw;
+    font-size: 46px;
     color: #D88BCD;
-    /* margin-bottom: 10px; */
 }
 
 .parameterName {
     color: #9fa9be;
-    font-size: 1.2vw;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1200px){
+    .parameter{
+        padding: 5px 10px;;
+    }
+
+    .parameterValue {
+        font-size: 16px;
+    }
+    
+    .parameterIcon {
+        font-size: 40px;
+    }
+    
+    .parameterName {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 860px){
     .parameter{
         padding: 5px 10px;;
     }
+
+    
+    
 }
 
 @media screen and (max-width: 480px){
