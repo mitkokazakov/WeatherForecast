@@ -5,7 +5,7 @@
 }
 
 .logo {
-    width: 7%;
+    width: 100px;
     text-align: right;
     color: white;
 }
@@ -13,12 +13,13 @@
 .logoHeading {
     letter-spacing: 3px;
     font-weight: 300;
-    font-size: 1vw;
+    font-size: 20px;
 }
 
 .logoParagraph {
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 20px;
+    text-align: right;
 }
 
 @media screen and (max-width: 480px) {
