@@ -6,7 +6,6 @@
   padding: 20px 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   align-items: center;
   justify-content: space-between;
 }
@@ -144,13 +143,16 @@
 }
 
 @media screen and (max-width: 1460px) {
-
-    .currentDayDetails{
-        gap: 10px;
-    }
+  .currentDayDetails {
+    gap: 10px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
+  .currentDay {
+    gap: 30px;
+  }
+
   .city {
     font-size: 32px;
   }
@@ -170,12 +172,11 @@
   }
 
   .currentDayDetails {
-    gap: 10px;
+    gap: 20px;
   }
 }
 
 @media screen and (max-width: 1000px) {
-
   .currentDayForm {
     height: 50px;
   }
@@ -213,11 +214,11 @@
     gap: 50px;
   }
 
-  .currentDayForm{
+  .currentDayForm {
     height: 40px;
   }
 
-  .currentDayInput{
+  .currentDayInput {
     padding: 5px 15px;
     font-size: 16px;
   }
@@ -238,7 +239,8 @@
     font-size: 60px;
   }
 
-  .currentDayTemp, .currentDayTempDegrees {
+  .currentDayTemp,
+  .currentDayTempDegrees {
     font-size: 20px;
   }
 
