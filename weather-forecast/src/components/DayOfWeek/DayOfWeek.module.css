@@ -1,5 +1,5 @@
 .weekDay{
-    padding: 0.5vh 0.5vw;
+    padding: 20px 20px;
     width: 28%;
     border-radius: 10px;
     border: 1px solid white;
@@ -11,9 +11,9 @@
     color: #8290AC;
 }
 
-/* .weekDayDate{
-
-} */
+.weekDayDate, .weekDayForecast{
+    font-size: 20px;
+}
 
 .weekDayIconDegrees{
     display: flex;
@@ -23,7 +23,7 @@
 }
 
 .weekDayIcon{
-    font-size: 4vw;
+    font-size: 60px;
     color: #8290AC;
 }
 
@@ -33,37 +33,82 @@
 }
 
 .weekDayMaxTemp{
-    font-size: 2.5vw;
+    font-size: 40px;
     font-weight: 10;
     color: #7B8AA7;
 }
 
 .weekDayMinTemp{
-    font-size: 1.5vw;
+    font-size: 32px;
     font-weight: 100;
     color: #B6BFD1;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 1100px){
+
     .weekDay{
-        padding: 0.5vh 1vw;
-        width: 30%;
-        height: 98%;
+        padding: 30px 0px;
+        gap: 30px;
     }
 
-    .weekDay .weekDayDate, .weekDayForecast{
-        font-size: 3vw;
+    .weekDayMaxTemp{
+        font-size: 32px;
+    }
+
+    .weekDayMinTemp{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    .weekDay{
+        width: 31%;
     }
 
     .weekDayIcon{
-        font-size: 5vw;
+        font-size: 40px;
+    }
+
+    .weekDayMaxTemp{
+        font-size: 24px;
+    }
+
+    .weekDayMinTemp{
+        font-size: 16px;
+    }
+
+    .weekDayForecast{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    .weekDay{
+        padding: 10px 20px;
+        width: 80%;
+        height: 33%;
+        gap: 10px;
+    }
+
+    .weekDayIconDegrees{
+        gap: 20px;
+    }
+
+    .weekDay .weekDayDate, .weekDayForecast{
+        font-size: 20px;
+    }
+
+    .weekDayIcon{
+        font-size: 70px;
     }
 
     .weekDayDegrees .weekDayMaxTemp{
-        font-size: 3.5vw;
+        font-size: 32px;
     }
 
     .weekDayDegrees .weekDayMinTemp{
-        font-size: 3vw;
+        font-size: 26px;
     }
 }

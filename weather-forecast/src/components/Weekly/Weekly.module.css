@@ -20,9 +20,30 @@
     font-size: 1.3vw;
 }
 
+@media screen and (max-width: 1100px){
+    .weekly{
+        padding: 70px 50px;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .weeklyHeading{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .weekly{
+        gap: 10px;
+    }
+}
+
 @media screen and (max-width: 480px){
     .weekly{
-        padding: 4vh 2vw 1vh 2vw;
+        padding: 50px 20px 10px 20px;
+        flex-direction: column;
+        flex-wrap: nowrap;
         justify-content: center;
         gap: 10px;
     }
