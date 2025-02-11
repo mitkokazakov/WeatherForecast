@@ -9,11 +9,30 @@ const optionsNinja = {
 };
 
 
-export const fetchData = (currentText) => {
+export const fetchData = async (currentText) => {
 
-    const urlNinja = `https://api.api-ninjas.com/v1/city?limit=10&min_population=1000&name=${currentText}`;
+    const urlNinja = `https://api.api-ninjas.com/v1/city?min_population=1000&name=${currentText}`;
 
 
-    return fetch(urlNinja, optionsNinja).then(resp => resp.json());
+    // return fetch(urlNinja, optionsNinja).then(resp => resp.json());
+
+    // const data = fetch(urlNinja, optionsNinja).then(resp => resp.json());
+
+    const resp = await fetch(urlNinja, optionsNinja);
+
+    const fetchedData = await resp.json();
+
+    const filteredData = [];
+
+    // if(fetchedData.length > 10){
+    //     filteredData = fetchData.slice(0,10);
+
+    //     return filteredData;
+    // }
+    // else{
+    //     return fetchedData;
+    // }
+
+    return fetchedData;
 
 }

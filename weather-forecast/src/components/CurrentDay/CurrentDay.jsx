@@ -46,11 +46,15 @@ function CurrentDay({ data }) {
 
     }
 
-    function onChangeInputHandler(e) {
+    async function onChangeInputHandler(e) {
 
         let currentInput = e.target.value;
 
-        citiesService.fetchData(currentInput).then(data => setCities(data));
+        // citiesService.fetchData(currentInput).then(data => setCities(data));
+
+        const data = await citiesService.fetchData(currentInput);
+
+        setCities(data);
 
         let suggestionsContainer = document.querySelector('#suggestionContainer')
 
