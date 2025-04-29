@@ -36,6 +36,7 @@ The app relies on geolocation to show accurate weather data for your area.
 
 ## 🧪 Tech Stack (optional)
 - ReactJS
-- HTML/CSS/JavaScript (or your stack)
+- HTML/CSS/JavaScript
 - Geolocation API
-- Weather API (e.g., OpenWeatherMap)
+- Weather API (https://www.weatherapi.com/)
+- All cities API (https://www.api-ninjas.com/)
